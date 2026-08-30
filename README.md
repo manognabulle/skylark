@@ -124,13 +124,103 @@ All 18 test cases cover tool function correctness, date/numeric parsing, status 
 
 ---
 
-## 5. Example Queries
+#### Example Business Intelligence Queries
 
-* **Pipeline Health**: *"How's our pipeline looking for the mining sector this quarter?"*
-* **Receivables & Revenue**: *"What's our total receivable amount right now, and how confident should I be in that number?"*
-* **Billed Value**: *"What is the total billed value including GST across all work orders?"*
-* **Execution Status**: *"Which sector has the most work orders stuck in execution?"*
-* **Leadership Updates**: *"Prepare this week's leadership update."*
+The agent supports natural-language, founder-level questions and dynamically
+queries the monday.com Work Orders and Deals boards to generate business
+insights.
+
+### 1. Executive / Leadership View
+
+> Give me a leadership update on the business. Summarize pipeline health,
+> revenue, operational status, key risks, and any data-quality concerns.
+
+**Demonstrates:** Executive-level synthesis across multiple business metrics.
+
+---
+
+### 2. Sector Performance
+
+> How is our pipeline looking for the Energy sector this quarter?
+> Include pipeline value, deal count, major opportunities, and any relevant
+> data-quality caveats.
+
+**Demonstrates:** Sector-level filtering, aggregation, and contextual insights.
+
+---
+
+### 3. Pipeline Analysis
+
+> Which sectors currently have the strongest sales pipeline, and what is
+> driving their performance?
+
+**Demonstrates:** Cross-record aggregation and business interpretation rather
+than returning raw records.
+
+---
+
+### 4. Deal Prioritization
+
+> What are the most important deals in the current pipeline?
+> Prioritize them by business value and explain why they should receive
+> management attention.
+
+**Demonstrates:** Business-oriented prioritization and decision support.
+
+---
+
+### 5. Operational Performance
+
+> Give me an operational health summary of the current work orders.
+> Highlight completed, active, delayed, and potentially at-risk work.
+
+**Demonstrates:** Work-order analysis and operational KPI interpretation.
+
+---
+
+### 6. Cross-Board Analysis
+
+> Are there any relationships or risks between the current sales pipeline
+> and ongoing work orders that leadership should know about?
+
+**Demonstrates:** Reasoning across the Deals and Work Orders data sources.
+
+---
+
+### 7. Data Quality
+
+> What data-quality issues exist in the current business data?
+> Identify missing values, inconsistent fields, or incomplete records and
+> explain how they could affect the analysis.
+
+**Demonstrates:** Missing-data handling, normalization, and transparent
+communication of analytical limitations.
+
+---
+
+### 8. Conversational Follow-up
+
+The agent also supports follow-up questions without requiring the user to
+repeat the complete context.
+
+**Example conversation:**
+
+> User: Which sector has the strongest pipeline?
+
+> User: What are the biggest opportunities in that sector?
+
+> User: Which of those should leadership prioritize and why?
+
+**Demonstrates:** Conversational context and iterative business analysis.
+
+---
+
+### Data Resilience
+
+The agent is designed to work with imperfect real-world business data.
+When information is missing or inconsistent, the response communicates
+relevant caveats rather than silently presenting potentially misleading
+results.
 
 ---
 
