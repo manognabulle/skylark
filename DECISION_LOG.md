@@ -40,7 +40,17 @@ A full audit comparing monday.com live GraphQL API records against source datase
 
 ---
 
+## Interpretation of "Leadership Updates" (Optional Requirement)
+
+Rather than building a separate static report-generation tool, "Leadership Updates" was implemented as a **first-class conversational intent**:
+* When a user requests *"Prepare this week's leadership update"* (or similar executive summary queries), the system prompt instructs the agent to synthesize cross-board metrics into a structured executive update.
+* The update presents **Pipeline Health** (active deals, closure probabilities, top deal stages), **Revenue & Receivables** (billed values, collected amounts, outstanding receivables), **Operational Execution** (work order status by sector), and **Data Quality Flags** worth leadership's attention.
+* This keeps the interface unified within the conversational chat while outputting a clean, skimmable format ready for executive distribution.
+
+---
+
 ## Trade-offs & Engineering Decisions
+
 
 1. **Python Tools for Arithmetic, LLM for Reasoning**: Sums, averages, and group-bys are calculated via pandas inside the `aggregate` tool rather than relying on LLM mental math.
 2. **Short TTL In-Process Cache (120s)**: monday.com API queries are cached in memory for 2 minutes to keep multi-turn conversations fast without hammering rate limits, while staying live for real-time interaction.
